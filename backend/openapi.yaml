@@ -1,0 +1,200 @@
+openapi: 3.1.0
+info:
+  title: Kymble Known CRM Intelligence API
+  version: 0.1.0
+  description: Evidence-backed ICP learning and GTM decisions for accounts already known to the CRM.
+servers:
+  - url: http://127.0.0.1:8787
+paths:
+  /health:
+    get:
+      operationId: getHealth
+      responses:
+        "200":
+          description: Provider readiness and known-account count.
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [status, providers, knownAccounts]
+                properties:
+                  status: { const: ok }
+                  providers: { $ref: "#/components/schemas/ProviderModes" }
+                  knownAccounts: { type: integer, minimum: 0 }
+  /api/v1/accounts:
+    get:
+      operationId: listAccounts
+      parameters:
+        - in: query
+          name: lifecycle
+          schema: { $ref: "#/components/schemas/Lifecycle" }
+        - in: query
+          name: cluster
+          schema: { type: string }
+      responses:
+        "200":
+          description: Existing CRM accounts.
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [accounts]
+                properties:
+                  accounts:
+                    type: array
+                    items: { $ref: "#/components/schemas/Account" }
+  /api/v1/accounts/{accountId}/profile:
+    get:
+      operationId: getAccountProfile
+      parameters:
+        - $ref: "#/components/parameters/AccountId"
+      responses:
+        "200":
+          description: Complete account dossier containing contacts, usage, engagements, forms, meetings, and evidence.
+          content:
+            application/json:
+              schema: { type: object, additionalProperties: true }
+        "404": { $ref: "#/components/responses/NotFound" }
+  /api/v1/accounts/{accountId}/analyze:
+    post:
+      operationId: analyzeAccount
+      parameters:
+        - $ref: "#/components/parameters/AccountId"
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                enrich: { type: boolean, default: false }
+                questions:
+                  type: array
+                  maxItems: 5
+                  items: { type: string, minLength: 1, maxLength: 300 }
+      responses:
+        "201":
+          description: Persisted analysis run, provider truth labels, Kylon packet, approval, and audit trail.
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/AnalysisRun" }
+        "404": { $ref: "#/components/responses/NotFound" }
+  /api/v1/clusters:
+    get:
+      operationId: listClusters
+      responses:
+        "200":
+          description: ICP cluster profiles.
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [clusters]
+                properties:
+                  clusters:
+                    type: array
+                    items: { type: object, additionalProperties: true }
+  /api/v1/runs/{runId}:
+    get:
+      operationId: getAnalysisRun
+      parameters:
+        - in: path
+          name: runId
+          required: true
+          schema: { type: string, minLength: 1 }
+      responses:
+        "200":
+          description: Persisted analysis run.
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/AnalysisRun" }
+        "404": { $ref: "#/components/responses/NotFound" }
+  /api/v1/approvals/{approvalId}/decision:
+    post:
+      operationId: decideApproval
+      parameters:
+        - in: path
+          name: approvalId
+          required: true
+          schema: { type: string, minLength: 1 }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [decision]
+              properties:
+                decision:
+                  enum: [approved, rejected, more_research]
+                note: { type: string, maxLength: 2000, default: "" }
+      responses:
+        "200":
+          description: Updated run. No external message is sent.
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/AnalysisRun" }
+        "404": { $ref: "#/components/responses/NotFound" }
+components:
+  parameters:
+    AccountId:
+      in: path
+      name: accountId
+      required: true
+      schema: { type: string, minLength: 1 }
+  responses:
+    NotFound:
+      description: The requested CRM record does not exist.
+      content:
+        application/json:
+          schema: { $ref: "#/components/schemas/Error" }
+  schemas:
+    Lifecycle:
+      enum: [paying, trial, evaluator, dormant, expansion, rejected]
+    TrustLabel:
+      enum: [verified, inferred, synthetic, cached]
+    Account:
+      type: object
+      required: [id, name, domain, lifecycle, industry, employeeBand, currentProducts, trustLabel]
+      properties:
+        id: { type: string }
+        name: { type: string }
+        domain: { type: string }
+        lifecycle: { $ref: "#/components/schemas/Lifecycle" }
+        industry: { type: string }
+        employeeBand: { type: string }
+        currentProducts:
+          type: array
+          items: { enum: [nimble, kylon] }
+        trustLabel: { $ref: "#/components/schemas/TrustLabel" }
+    ProviderModes:
+      type: object
+      required: [insforge, nimble, hydra, kylon]
+      properties:
+        insforge: { enum: [fixture, live] }
+        nimble: { enum: [fixture, live] }
+        hydra: { enum: [disabled, live] }
+        kylon: { enum: [workspace, native] }
+    AnalysisRun:
+      type: object
+      required: [analysis, approval, audit, providerModes, providerWarnings, kylonPacket]
+      properties:
+        analysis: { type: object, additionalProperties: true }
+        approval:
+          oneOf:
+            - { type: object, additionalProperties: true }
+            - { type: "null" }
+        audit:
+          type: array
+          items: { type: object, additionalProperties: true }
+        providerModes: { type: object, additionalProperties: true }
+        providerWarnings:
+          type: array
+          items: { type: string }
+        kylonPacket: { type: object, additionalProperties: true }
+    Error:
+      type: object
+      required: [error, message]
+      properties:
+        error: { type: string }
+        message: { type: string }

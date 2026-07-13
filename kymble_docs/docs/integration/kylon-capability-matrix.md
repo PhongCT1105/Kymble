@@ -32,7 +32,7 @@ mirror     emergency fallback; Kymble mirrors activity locally
 
 Selected mode: `workspace`
 
-Reason: replace this line after inspecting the actual workspace.
+Reason: the challenge workspace is available, but no documented Kylon API or webhook contract has been confirmed in the supplied materials. The backend therefore creates a structured mission packet for copy/import and does not call this native automation. Set `native` only after the sponsor confirms an endpoint.
 
 ## Minimum Kylon demo
 

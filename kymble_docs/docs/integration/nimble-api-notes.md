@@ -29,18 +29,20 @@ Record the exact participant-account documentation before implementation:
 
 | Item | Confirmed value |
 |---|---|
-| Search endpoint | |
-| Extract endpoint | |
-| Auth header | |
-| Search request schema | |
-| Search response schema | |
-| Extract request schema | |
-| Extract response schema | |
+| Search endpoint | `POST https://sdk.nimbleway.com/v1/search` |
+| Extract endpoint | `POST https://sdk.nimbleway.com/v1/extract` |
+| Auth header | `Authorization: Bearer <NIMBLE_API_KEY>` |
+| Search request schema | `query`, `focus`, `max_results`, `search_depth`, `include_answer` |
+| Search response schema | `request_id`, `total_results`, `results[]` with title, URL, content, and metadata |
+| Extract request schema | `url`, `formats`, optional `render` |
+| Extract response schema | `data.markdown`, `data.text`, or `data.html` plus status metadata |
 | Credit cost | |
 | Rate limits | |
 | Retry guidance | |
 
 ## Golden-path query strategy
+
+Implementation correction: Kymble does not run broad discovery for random ICP accounts. Every query begins from an account already in the CRM and includes its name/domain plus a concrete missing profile question. Search and Extract enrich the known account; they do not create a lead list.
 
 Use a maximum of four discovery queries and two page extractions during the live presentation.
 
