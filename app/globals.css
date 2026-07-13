@@ -1,0 +1,143 @@
+@import "tailwindcss";
+
+/* ============================================================
+   Kymble — "Fresh SaaS bright" design system
+   Signature: the receipts (mono evidence) + live ops console
+   ============================================================ */
+
+@theme {
+  /* surfaces */
+  --color-canvas: #f7f8fa;
+  --color-surface: #ffffff;
+  --color-surface-2: #fbfcfe;
+
+  /* text + lines */
+  --color-ink: #0b1020;
+  --color-muted: #5b6478;
+  --color-faint: #8b93a7;
+  --color-line: #e7e9f0;
+  --color-line-strong: #d7dbe6;
+
+  /* sponsor accents */
+  --color-nimble: #3b5bff; /* Nimble fit — electric blue */
+  --color-nimble-soft: #eaeeff;
+  --color-kylon: #7a4dff; /* Kylon fit — violet */
+  --color-kylon-soft: #f0ebff;
+
+  /* trust labels */
+  --color-verified: #12a150;
+  --color-verified-soft: #e5f6ec;
+  --color-inferred: #f5a524;
+  --color-inferred-soft: #fdf1dd;
+  --color-synthetic: #8b8aa6;
+  --color-synthetic-soft: #eeeef4;
+  --color-cached: #64748b;
+  --color-cached-soft: #eef1f5;
+  --color-danger: #e5484d;
+  --color-danger-soft: #fdeaea;
+
+  /* fonts (wired by next/font in layout) */
+  --font-display: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
+
+  /* radii */
+  --radius-card: 14px;
+
+  /* shadows — restrained */
+  --shadow-card: 0 1px 2px rgba(11, 16, 32, 0.04), 0 4px 16px rgba(11, 16, 32, 0.04);
+  --shadow-raise: 0 2px 6px rgba(11, 16, 32, 0.06), 0 12px 32px rgba(11, 16, 32, 0.08);
+  --shadow-glow: 0 0 0 4px rgba(59, 91, 255, 0.12);
+}
+
+@layer base {
+  html {
+    background: var(--color-canvas);
+    color: var(--color-ink);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    font-family: var(--font-sans);
+    background: var(--color-canvas);
+    color: var(--color-ink);
+  }
+  ::selection {
+    background: color-mix(in srgb, var(--color-nimble) 22%, transparent);
+  }
+  * {
+    border-color: var(--color-line);
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+  /* tabular figures so counting numbers don't jitter */
+  .tnum {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum" 1;
+  }
+}
+
+@layer utilities {
+  .font-display { font-family: var(--font-display); }
+  .font-mono { font-family: var(--font-mono); }
+
+  .gradient-brand {
+    background-image: linear-gradient(100deg, var(--color-nimble), var(--color-kylon));
+  }
+  .text-gradient-brand {
+    background-image: linear-gradient(100deg, var(--color-nimble), var(--color-kylon));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card);
+  }
+
+  /* signature: perforated receipt top edge */
+  .receipt-edge {
+    -webkit-mask-image: radial-gradient(circle 5px at 10px -1px, transparent 5px, #000 5px);
+    mask-image: radial-gradient(circle 5px at 10px -1px, transparent 5px, #000 5px);
+    -webkit-mask-size: 20px 100%;
+    mask-size: 20px 100%;
+    -webkit-mask-repeat: repeat-x;
+    mask-repeat: repeat-x;
+  }
+
+  /* soft grid backdrop for hero */
+  .grid-backdrop {
+    background-image:
+      linear-gradient(to right, rgba(11, 16, 32, 0.035) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(11, 16, 32, 0.035) 1px, transparent 1px);
+    background-size: 34px 34px;
+  }
+
+  .pulse-live {
+    animation: pulse-live 1.6s ease-in-out infinite;
+  }
+  @keyframes pulse-live {
+    0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(59, 91, 255, 0.5); }
+    50% { opacity: 0.85; box-shadow: 0 0 0 6px rgba(59, 91, 255, 0); }
+  }
+
+  .pulse-approve {
+    animation: pulse-approve 1.4s ease-in-out infinite;
+  }
+  @keyframes pulse-approve {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(245, 165, 36, 0.5); }
+    50% { box-shadow: 0 0 0 7px rgba(245, 165, 36, 0); }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
