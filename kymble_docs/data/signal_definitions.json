@@ -1,0 +1,170 @@
+[
+  {
+    "id": "agent-web-data-need",
+    "playbook": "nimble",
+    "name": "Agent depends on live external web data",
+    "private_condition": "The product cannot complete its core job from internal or static data alone.",
+    "observable_proxy": "The company launches an agent that researches companies, markets, code, products, or current events from the public web.",
+    "rationale": "A live-web dependency creates direct need for reliable discovery and extraction.",
+    "search_queries": [
+      "company autonomous agent live web data",
+      "company AI research agent launch",
+      "company agent public web research product"
+    ],
+    "eligible_sources": ["product", "docs", "engineering_blog", "job", "news"],
+    "weight": 20,
+    "max_age_days": 180,
+    "minimum_evidence": 1,
+    "false_positive_risks": [
+      "The product may use only internal CRM or licensed database data.",
+      "The launch may be a prototype rather than a production dependency."
+    ]
+  },
+  {
+    "id": "structured-extraction-need",
+    "playbook": "nimble",
+    "name": "Needs structured page-level extraction",
+    "private_condition": "Search snippets do not contain the fields downstream agents need.",
+    "observable_proxy": "Documentation, jobs, or engineering posts mention browser automation, parsing, normalization, or structured extraction.",
+    "rationale": "Page-level field extraction is a stronger Nimble fit than simple search.",
+    "search_queries": [
+      "company web extraction structured data",
+      "browser automation data normalization job",
+      "site:company.com careers web data engineer extraction"
+    ],
+    "eligible_sources": ["job", "docs", "engineering_blog", "product"],
+    "weight": 20,
+    "max_age_days": 365,
+    "minimum_evidence": 1,
+    "false_positive_risks": [
+      "The role may support a one-time migration.",
+      "An official API may already satisfy the requirement."
+    ]
+  },
+  {
+    "id": "freshness-reliability-pain",
+    "playbook": "nimble",
+    "name": "Freshness or reliability pain",
+    "private_condition": "Stale, blocked, or unstable external data harms product quality.",
+    "observable_proxy": "The company discusses stale retrieval, scraping failures, outdated recommendations, coverage gaps, or provider fragmentation.",
+    "rationale": "Publicly stated freshness or reliability pain creates stronger urgency than generic web-data usage.",
+    "search_queries": [
+      "company stale data retrieval issue",
+      "company scraping reliability challenge",
+      "company outdated embeddings current web context"
+    ],
+    "eligible_sources": ["engineering_blog", "support", "job", "social", "docs"],
+    "weight": 15,
+    "max_age_days": 180,
+    "minimum_evidence": 1,
+    "false_positive_risks": [
+      "The issue may already be resolved.",
+      "The complaint may concern an unrelated internal dataset."
+    ]
+  },
+  {
+    "id": "high-volume-web-workflow",
+    "playbook": "nimble",
+    "name": "High-volume or multi-source web workflow",
+    "private_condition": "The company must collect or refresh information across many pages, domains, or categories.",
+    "observable_proxy": "The product claims broad coverage, many monitored domains, new market expansion, or high-volume research automation.",
+    "rationale": "Volume and source diversity increase the value of managed web-intelligence infrastructure.",
+    "search_queries": [
+      "company product monitors thousands of websites",
+      "company expands market intelligence coverage",
+      "company high volume account research automation"
+    ],
+    "eligible_sources": ["product", "news", "docs", "engineering_blog"],
+    "weight": 20,
+    "max_age_days": 365,
+    "minimum_evidence": 1,
+    "false_positive_risks": [
+      "Marketing coverage claims may be inflated.",
+      "The company may purchase the data from a licensed aggregator."
+    ]
+  },
+  {
+    "id": "multi-agent-workflow",
+    "playbook": "kylon",
+    "name": "Multiple agents or AI workflows",
+    "private_condition": "Several agents must coordinate work rather than operate as isolated assistants.",
+    "observable_proxy": "The company launches several specialized agents or describes multi-agent workflows across departments.",
+    "rationale": "Multiple agents create ownership, handoff, and shared-context needs.",
+    "search_queries": [
+      "company multi agent workflow launch",
+      "company internal AI agents departments",
+      "company specialized agents sales support research"
+    ],
+    "eligible_sources": ["product", "engineering_blog", "job", "social", "news"],
+    "weight": 20,
+    "max_age_days": 180,
+    "minimum_evidence": 1,
+    "false_positive_risks": [
+      "Several agents may be marketing labels for one underlying chatbot.",
+      "The agents may not interact with a human team."
+    ]
+  },
+  {
+    "id": "context-fragmentation",
+    "playbook": "kylon",
+    "name": "Context spread across tools",
+    "private_condition": "Agents and people repeatedly reconstruct business context across disconnected systems.",
+    "observable_proxy": "Public architecture or hiring material shows agents working across chat, CRM, email, GitHub, documents, or support systems.",
+    "rationale": "Cross-system work creates a strong need for a shared organization layer.",
+    "search_queries": [
+      "company agents Slack GitHub Notion CRM",
+      "company repeated prompting context AI tools",
+      "company AI workflow across CRM email chat"
+    ],
+    "eligible_sources": ["engineering_blog", "job", "social", "meeting", "docs"],
+    "weight": 20,
+    "max_age_days": 365,
+    "minimum_evidence": 1,
+    "false_positive_risks": [
+      "Integration breadth does not always imply context fragmentation.",
+      "The company may already have a strong internal coordination layer."
+    ]
+  },
+  {
+    "id": "human-approval-need",
+    "playbook": "kylon",
+    "name": "Human approval or governance requirement",
+    "private_condition": "Sensitive agent actions cannot execute without review, permissions, and an audit trail.",
+    "observable_proxy": "Security, product, job, or workflow content mentions human-in-the-loop control, approval, governance, or scoped permissions.",
+    "rationale": "Approval requirements create a concrete Kylon workflow rather than a generic collaboration pitch.",
+    "search_queries": [
+      "company human in the loop AI agents",
+      "company AI agent governance approval",
+      "company agent scoped permissions audit trail"
+    ],
+    "eligible_sources": ["security", "docs", "job", "meeting", "product"],
+    "weight": 15,
+    "max_age_days": 365,
+    "minimum_evidence": 1,
+    "false_positive_risks": [
+      "Approval may apply only to one regulated edge case.",
+      "The company may already use an internal approval system."
+    ]
+  },
+  {
+    "id": "recent-ai-organization-trigger",
+    "playbook": "joint",
+    "name": "Recent AI organization trigger",
+    "private_condition": "A launch, hiring push, funding event, or expansion makes the web-data and coordination problem urgent now.",
+    "observable_proxy": "The company recently launched an agent product, hired AI operations or web-data roles, raised capital, or expanded coverage.",
+    "rationale": "A recent event establishes timing and prevents static-fit accounts from dominating the pipeline.",
+    "search_queries": [
+      "company AI agent product launch recent",
+      "company hiring AI operations web data",
+      "company funding multi agent platform"
+    ],
+    "eligible_sources": ["news", "job", "product", "social"],
+    "weight": 10,
+    "max_age_days": 180,
+    "minimum_evidence": 1,
+    "false_positive_risks": [
+      "A funding or launch event does not prove active purchase evaluation.",
+      "The trigger may increase awareness without creating budget."
+    ]
+  }
+]

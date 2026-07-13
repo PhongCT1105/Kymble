@@ -1,0 +1,18 @@
+[
+  {
+    "id": "nimble",
+    "name": "Nimble",
+    "website": "https://www.nimbleway.com/",
+    "product_summary": "Real-time web intelligence and structured web-data capabilities for AI agents and data workflows.",
+    "trust_label": "verified",
+    "participant_signup_url": "https://online.nimbleway.com/signup"
+  },
+  {
+    "id": "kylon",
+    "name": "Kylon",
+    "website": "https://kylon.io/",
+    "product_summary": "AI-native workspace for human-agent teams with shared context, structured data, workflows, and human approval.",
+    "trust_label": "verified",
+    "challenge_workspace_url": "https://app.kylon.io/c/q_rBaZ_kIMG8yUdV2FpiISm-rfosOZkj"
+  }
+]

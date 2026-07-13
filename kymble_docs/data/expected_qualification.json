@@ -1,0 +1,37 @@
+[
+  {
+    "account_id": "acct-revpilot",
+    "expected_nimble_range": [80, 95],
+    "expected_kylon_range": [75, 90],
+    "expected_decision": "qualify",
+    "expected_play": "joint architecture workshop"
+  },
+  {
+    "account_id": "acct-codecurrent",
+    "expected_nimble_range": [75, 90],
+    "expected_kylon_range": [35, 60],
+    "expected_decision": "qualify",
+    "expected_play": "freshness gap report"
+  },
+  {
+    "account_id": "acct-shelfpulse",
+    "expected_nimble_range": [70, 88],
+    "expected_kylon_range": [15, 40],
+    "expected_decision": "qualify",
+    "expected_play": "coverage and scale benchmark"
+  },
+  {
+    "account_id": "acct-agentmesh",
+    "expected_nimble_range": [35, 60],
+    "expected_kylon_range": [82, 96],
+    "expected_decision": "qualify",
+    "expected_play": "agent organization readiness map"
+  },
+  {
+    "account_id": "acct-marketatlas",
+    "expected_nimble_range": [0, 35],
+    "expected_kylon_range": [0, 35],
+    "expected_decision": "reject",
+    "expected_play": null
+  }
+]

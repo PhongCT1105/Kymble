@@ -1,0 +1,39 @@
+[
+  {
+    "id": "meeting-revpilot-discovery",
+    "account_id": "acct-revpilot",
+    "title": "Synthetic discovery call \u2014 RevPilot AI",
+    "occurred_at": "2026-07-12T22:00:00Z",
+    "transcript": [
+      {
+        "speaker": "RevPilot CEO",
+        "text": "We combine three providers because no single source gives us complete company context."
+      },
+      {
+        "speaker": "RevPilot CTO",
+        "text": "Our agents fail when page formats change and the extracted fields are inconsistent."
+      },
+      {
+        "speaker": "RevPilot CEO",
+        "text": "Research, messaging, and CRM agents each keep separate context."
+      },
+      {
+        "speaker": "RevPilot COO",
+        "text": "Anything customer-facing must be approved by a human."
+      }
+    ],
+    "summary": {
+      "nimble_pain": [
+        "provider fragmentation",
+        "format instability",
+        "incomplete company context"
+      ],
+      "kylon_pain": [
+        "separate agent context",
+        "human approval requirement"
+      ],
+      "next_step": "Kymble joint Nimble + Kylon architecture workshop"
+    },
+    "trust_label": "synthetic"
+  }
+]

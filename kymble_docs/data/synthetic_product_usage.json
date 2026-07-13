@@ -1,0 +1,32 @@
+[
+  {
+    "id": "usage-revpilot-nimble-sandbox",
+    "account_id": "acct-revpilot",
+    "product": "Nimble sandbox",
+    "period_start": "2026-07-10T00:00:00Z",
+    "period_end": "2026-07-12T23:59:59Z",
+    "metrics": {
+      "search_requests": 14,
+      "extract_requests": 7,
+      "unique_domains": 5,
+      "failed_extractions": 1
+    },
+    "interpretation": "Synthetic first-party product engagement suggesting technical evaluation.",
+    "trust_label": "synthetic"
+  },
+  {
+    "id": "usage-agentmesh-kylon-workspace",
+    "account_id": "acct-agentmesh",
+    "product": "Kylon challenge-style workspace trial",
+    "period_start": "2026-07-11T00:00:00Z",
+    "period_end": "2026-07-12T23:59:59Z",
+    "metrics": {
+      "coworkers_created": 4,
+      "structured_records_created": 12,
+      "approval_requests": 3,
+      "human_decisions": 3
+    },
+    "interpretation": "Synthetic first-party workspace engagement suggesting organization fit.",
+    "trust_label": "synthetic"
+  }
+]

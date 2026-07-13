@@ -1,0 +1,45 @@
+[
+  {
+    "id": "nimble-alta",
+    "vendor_id": "nimble",
+    "customer_name": "Alta",
+    "title": "Powering Millions of AI-Driven GTM Workflows with Deep, Reliable Web Data from Nimble",
+    "source_url": "https://www.nimbleway.com/case-studies/customer-story-alta",
+    "published_at": null,
+    "verified_facts": [
+      "Alta is described as a GTM operating system.",
+      "Its AI agents require structured external data about prospects, competitors, customer stories, technographics, and buying signals.",
+      "The case study describes millions of pages processed per day.",
+      "The case study reports 3–4x deeper context and greater than 99 percent job success."
+    ],
+    "trust_label": "verified"
+  },
+  {
+    "id": "nimble-qodo",
+    "vendor_id": "nimble",
+    "customer_name": "Qodo",
+    "title": "Elevating AI Code Review with Nimble's Web Search Agents",
+    "source_url": "https://www.nimbleway.com/case-studies/qodo",
+    "published_at": null,
+    "verified_facts": [
+      "Qodo needs fresh context from GitHub, open-source libraries, and domain-specific sources.",
+      "Static embeddings became stale.",
+      "Page discovery without structured extraction was insufficient.",
+      "The case study reports fewer support tickets and higher customer satisfaction."
+    ],
+    "trust_label": "verified"
+  },
+  {
+    "id": "nimble-grips",
+    "vendor_id": "nimble",
+    "customer_name": "Grips Intelligence",
+    "title": "Scaling Reliable E-commerce Data with Nimble's Web API",
+    "source_url": "https://www.nimbleway.com/case-studies/grips-intelligence",
+    "published_at": null,
+    "verified_facts": [
+      "Grips is described as an e-commerce data and insights business.",
+      "The case study describes product and pricing intelligence across 45,000 websites and 65,000 brands."
+    ],
+    "trust_label": "verified"
+  }
+]

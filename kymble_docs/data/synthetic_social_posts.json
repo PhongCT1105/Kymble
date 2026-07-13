@@ -1,0 +1,35 @@
+[
+  {
+    "id": "social-revpilot-founder-launch",
+    "account_id": "acct-revpilot",
+    "author_role": "Co-founder and CEO",
+    "network": "LinkedIn-style public post",
+    "posted_at": "2026-06-28T16:00:00Z",
+    "text": "We launched an autonomous account-research agent that gathers company, competitor, and buyer context before our messaging agents act.",
+    "source_url": "https://revpilot.example/social/autonomous-research-launch",
+    "signal_ids": ["agent-web-data-need", "multi-agent-workflow"],
+    "trust_label": "synthetic"
+  },
+  {
+    "id": "social-codecurrent-engineer",
+    "account_id": "acct-codecurrent",
+    "author_role": "Staff Retrieval Engineer",
+    "network": "LinkedIn-style public post",
+    "posted_at": "2026-07-01T16:00:00Z",
+    "text": "Offline package indexes age quickly. AI code review needs current project and dependency context at evaluation time.",
+    "source_url": "https://codecurrent.example/social/current-package-context",
+    "signal_ids": ["freshness-reliability-pain"],
+    "trust_label": "synthetic"
+  },
+  {
+    "id": "social-agentmesh-ops",
+    "account_id": "acct-agentmesh",
+    "author_role": "Head of AI Operations",
+    "network": "LinkedIn-style public post",
+    "posted_at": "2026-07-06T16:00:00Z",
+    "text": "The hard part is no longer creating another agent. It is giving seven agents the same business context and keeping people in control of sensitive actions.",
+    "source_url": "https://agentmesh.example/social/shared-context",
+    "signal_ids": ["context-fragmentation", "human-approval-need"],
+    "trust_label": "synthetic"
+  }
+]

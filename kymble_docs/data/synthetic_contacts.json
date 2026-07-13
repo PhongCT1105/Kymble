@@ -1,0 +1,29 @@
+[
+  {
+    "id": "contact-revpilot-founder",
+    "account_id": "acct-revpilot",
+    "full_name": "Maya Chen",
+    "title": "Co-founder and CEO",
+    "email": "maya@revpilot.example",
+    "linkedin_url": null,
+    "trust_label": "synthetic"
+  },
+  {
+    "id": "contact-codecurrent-cto",
+    "account_id": "acct-codecurrent",
+    "full_name": "Eli Brooks",
+    "title": "Chief Technology Officer",
+    "email": "eli@codecurrent.example",
+    "linkedin_url": null,
+    "trust_label": "synthetic"
+  },
+  {
+    "id": "contact-agentmesh-ops",
+    "account_id": "acct-agentmesh",
+    "full_name": "Noor Patel",
+    "title": "Head of AI Operations",
+    "email": "noor@agentmesh.example",
+    "linkedin_url": null,
+    "trust_label": "synthetic"
+  }
+]

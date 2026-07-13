@@ -1,0 +1,72 @@
+[
+  {
+    "id": "acct-revpilot",
+    "name": "RevPilot AI",
+    "domain": "revpilot.example",
+    "description": "Fictional AI SDR and autonomous account-research platform.",
+    "industry": "Sales Technology",
+    "employee_band": "21-50",
+    "stage": "discovered",
+    "nimble_fit_score": 0,
+    "kylon_fit_score": 0,
+    "engagement_score": 13,
+    "combined_priority": 0,
+    "trust_label": "synthetic"
+  },
+  {
+    "id": "acct-codecurrent",
+    "name": "CodeCurrent",
+    "domain": "codecurrent.example",
+    "description": "Fictional AI code-security platform that validates generated code against current package ecosystems.",
+    "industry": "Developer Tools",
+    "employee_band": "101-200",
+    "stage": "discovered",
+    "nimble_fit_score": 0,
+    "kylon_fit_score": 0,
+    "engagement_score": 3,
+    "combined_priority": 0,
+    "trust_label": "synthetic"
+  },
+  {
+    "id": "acct-shelfpulse",
+    "name": "ShelfPulse",
+    "domain": "shelfpulse.example",
+    "description": "Fictional pricing-intelligence platform tracking retailer pages.",
+    "industry": "E-commerce Intelligence",
+    "employee_band": "51-100",
+    "stage": "discovered",
+    "nimble_fit_score": 0,
+    "kylon_fit_score": 0,
+    "engagement_score": 0,
+    "combined_priority": 0,
+    "trust_label": "synthetic"
+  },
+  {
+    "id": "acct-agentmesh",
+    "name": "AgentMesh Labs",
+    "domain": "agentmesh.example",
+    "description": "Fictional AI workflow company with multiple department-specific agents.",
+    "industry": "Workflow Automation",
+    "employee_band": "51-100",
+    "stage": "discovered",
+    "nimble_fit_score": 0,
+    "kylon_fit_score": 0,
+    "engagement_score": 8,
+    "combined_priority": 0,
+    "trust_label": "synthetic"
+  },
+  {
+    "id": "acct-marketatlas",
+    "name": "MarketAtlas",
+    "domain": "marketatlas.example",
+    "description": "Fictional traditional analytics consultancy with no meaningful agent or live-data dependency.",
+    "industry": "Consulting",
+    "employee_band": "11-20",
+    "stage": "discovered",
+    "nimble_fit_score": 0,
+    "kylon_fit_score": 0,
+    "engagement_score": 2,
+    "combined_priority": 0,
+    "trust_label": "synthetic"
+  }
+]

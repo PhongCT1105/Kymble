@@ -1,0 +1,47 @@
+[
+  {
+    "id": "evt-revpilot-launch",
+    "account_id": "acct-revpilot",
+    "event_type": "product_launch",
+    "occurred_at": "2026-06-28T16:00:00Z",
+    "title": "Autonomous Account Research Agent Launch",
+    "description": "Synthetic event describing a new multi-agent research product.",
+    "trust_label": "synthetic"
+  },
+  {
+    "id": "evt-revpilot-job",
+    "account_id": "acct-revpilot",
+    "event_type": "job_post",
+    "occurred_at": "2026-07-03T16:00:00Z",
+    "title": "Senior Web Data Engineer",
+    "description": "Synthetic role focused on resilient extraction and data normalization.",
+    "trust_label": "synthetic"
+  },
+  {
+    "id": "evt-codecurrent-post",
+    "account_id": "acct-codecurrent",
+    "event_type": "engineering_post",
+    "occurred_at": "2026-07-01T16:00:00Z",
+    "title": "Why Offline Package Indexes Fail AI Code Review",
+    "description": "Synthetic post about stale package metadata.",
+    "trust_label": "synthetic"
+  },
+  {
+    "id": "evt-shelfpulse-expansion",
+    "account_id": "acct-shelfpulse",
+    "event_type": "expansion",
+    "occurred_at": "2026-06-19T16:00:00Z",
+    "title": "ShelfPulse Expands to Two New Markets",
+    "description": "Synthetic expansion event increasing site coverage requirements.",
+    "trust_label": "synthetic"
+  },
+  {
+    "id": "evt-agentmesh-hiring",
+    "account_id": "acct-agentmesh",
+    "event_type": "job_post",
+    "occurred_at": "2026-07-05T16:00:00Z",
+    "title": "Head of AI Operations",
+    "description": "Synthetic role coordinating agents across teams and systems.",
+    "trust_label": "synthetic"
+  }
+]

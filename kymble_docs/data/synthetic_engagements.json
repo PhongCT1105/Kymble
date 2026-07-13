@@ -1,0 +1,42 @@
+[
+  {
+    "id": "eng-001",
+    "account_id": "acct-revpilot",
+    "contact_id": "contact-revpilot-founder",
+    "type": "event",
+    "occurred_at": "2026-07-10T19:15:00Z",
+    "details": {"event_name": "Agentic GTM Webinar", "action": "attended"},
+    "score_delta": 2,
+    "trust_label": "synthetic"
+  },
+  {
+    "id": "eng-002",
+    "account_id": "acct-revpilot",
+    "contact_id": "contact-revpilot-founder",
+    "type": "form",
+    "occurred_at": "2026-07-11T17:30:00Z",
+    "details": {"problem": "Our agents need reliable company data", "daily_pages": "100k-1m", "needs_human_approval": true},
+    "score_delta": 8,
+    "trust_label": "synthetic"
+  },
+  {
+    "id": "eng-003",
+    "account_id": "acct-revpilot",
+    "contact_id": "contact-revpilot-founder",
+    "type": "content",
+    "occurred_at": "2026-07-12T16:00:00Z",
+    "details": {"asset": "Reliable Web Data for Agents", "views": 2},
+    "score_delta": 3,
+    "trust_label": "synthetic"
+  },
+  {
+    "id": "eng-004",
+    "account_id": "acct-agentmesh",
+    "contact_id": "contact-agentmesh-ops",
+    "type": "form",
+    "occurred_at": "2026-07-12T20:10:00Z",
+    "details": {"problem": "Teams repeatedly re-explain context to separate agents", "needs_human_approval": true},
+    "score_delta": 8,
+    "trust_label": "synthetic"
+  }
+]
