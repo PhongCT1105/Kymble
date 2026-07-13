@@ -21,6 +21,8 @@ import { RecordNotFoundError } from "./repositories/crm-repository.js";
 import { FixtureCrmRepository } from "./repositories/fixture-crm-repository.js";
 import { InsforgeCrmRepository } from "./repositories/insforge-crm-repository.js";
 import { AccountIntelligenceService } from "./services/account-intelligence-service.js";
+import { BreadthService } from "./breadth/breadth-service.js";
+import { FixtureLookalikeSource } from "./breadth/discover-lookalikes.js";
 
 type BuildAppOptions = {
   config?: AppConfig;
@@ -63,6 +65,9 @@ export function buildApp(options: BuildAppOptions = {}): FastifyInstance {
     kylon,
     options.now,
   );
+  const breadthService = options.now
+    ? new BreadthService(repository, new FixtureLookalikeSource(), options.now)
+    : new BreadthService(repository);
   const app = Fastify({ logger: false });
 
   void app.register(cors, {
@@ -129,6 +134,13 @@ export function buildApp(options: BuildAppOptions = {}): FastifyInstance {
       body.note,
       options.now?.() ?? new Date(),
     );
+  });
+
+  app.post("/api/v1/breadth/sweep", async (_request, reply) => {
+    // Runs the ICP breadth + causal-graph sweep across all clusters.
+    // Simulation-only by default; the frontend "Run" button calls this.
+    const result = await breadthService.sweepAllClusters();
+    return reply.status(200).send(result);
   });
 
   return app;
